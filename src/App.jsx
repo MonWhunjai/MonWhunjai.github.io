@@ -1,7 +1,3 @@
-import { useState } from 'react';
-import './App.css';
-
-// Import เฉพาะรูปโปรไฟล์และรูปโปรเจค (ส่วนไอคอน Skills เราจะใช้จากเว็บแทน)
 import ProfileImg from './assets/images/mon01.png';
 import ProjectApmImg from './assets/images/apm01.png';
 import ProjectHlImg from './assets/images/hl01.png';
