@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* คุณสามารถเพิ่ม CSS เพิ่มเติมข้างล่างนี้ได้ (ถ้าต้องการ) */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* ทำให้เวลากดลิงก์แล้วเลื่อนนุ่มๆ */
 }
