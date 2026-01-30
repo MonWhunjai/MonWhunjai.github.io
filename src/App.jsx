@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 
-// Import รูปภาพ (ตรวจสอบให้แน่ใจว่าไฟล์ภาพอยู่ใน folder src/assets/images นะครับ)
+// Import รูปภาพ
 import ProfileImg from './assets/images/mon01.png';
 import ProjectApmImg from './assets/images/apm01.png';
 import ProjectHlImg from './assets/images/hl01.png';
@@ -9,7 +9,7 @@ import ProjectHlImg from './assets/images/hl01.png';
 function App() {
   return (
     <div className="bg-gray-900 text-gray-100 font-sans antialiased selection:bg-blue-500 selection:text-white">
-      
+
       {/* Navbar */}
       <nav className="fixed w-full z-20 top-0 start-0 border-b border-gray-800 bg-gray-900/90 backdrop-blur-sm">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
@@ -32,7 +32,6 @@ function App() {
         <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-8">
             <div className="block lg:hidden mb-6">
-              {/* รูปสำหรับมือถือ */}
               <img src={ProfileImg} alt="Profile Image" className="mx-auto w-40 h-40 object-cover rounded-full shadow-lg" />
             </div>
             <h1 className="max-w-5xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
@@ -50,7 +49,6 @@ function App() {
             </a>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-3 lg:flex justify-end">
-             {/* รูปสำหรับ Desktop */}
             <img src={ProfileImg} alt="Profile Image" className="rounded-full w-80 h-80 object-cover border-4 border-gray-800 shadow-2xl" />
           </div>
         </div>
@@ -66,12 +64,12 @@ function App() {
               <div className="p-6 bg-gray-900 rounded-2xl border border-gray-700 hover:border-blue-500 transition-colors shadow-lg">
                 <span className="text-3xl block mb-2">📝</span>
                 <strong className="text-xl text-white">มัธยมศึกษาตอนปลาย สายศิลป์ - ญี่ปุ่น</strong>
-                <p className="text-gray-400 mt-1">โรงเรียนปัว (Pua School) | 2563 - 2565 <br/> เกรดเฉลี่ย: 2.50</p>
+                <p className="text-gray-400 mt-1">โรงเรียนปัว (Pua School) | 2563 - 2565 <br /> เกรดเฉลี่ย: 2.50</p>
               </div>
               <div className="p-6 bg-gray-900 rounded-2xl border border-gray-700 hover:border-blue-500 transition-colors shadow-lg">
                 <span className="text-3xl block mb-2">🎓</span>
                 <strong className="text-xl text-white">ปริญญาตรี วิทยาการคอมพิวเตอร์</strong>
-                <p className="text-gray-400 mt-1">มหาวิทยาลัยพะเยา | 2566 - ปัจจุบัน <br/> เกรดเฉลี่ย: 2.81</p>
+                <p className="text-gray-400 mt-1">มหาวิทยาลัยพะเยา | 2566 - ปัจจุบัน <br /> เกรดเฉลี่ย: 2.81</p>
               </div>
               <div className="p-6 bg-gray-900 rounded-2xl border border-gray-700 hover:border-blue-500 transition-colors shadow-lg">
                 <span className="text-3xl block mb-2">🎯</span>
@@ -88,7 +86,6 @@ function App() {
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
           <h2 className="mb-12 text-3xl font-extrabold tracking-tight text-center text-white">ทักษะความสามารถ</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            {/* Skill Icons Updated (Removed: TypeScript, Node.js, MySQL, Figma) */}
             <SkillCard icon="html" name="HTML" />
             <SkillCard icon="css" name="CSS" />
             <SkillCard icon="js" name="JavaScript" />
@@ -106,17 +103,25 @@ function App() {
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
           <h2 className="mb-12 text-3xl font-extrabold tracking-tight text-center text-white">ผลงานของผม</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            {/* Project 1 */}
+
+            {/* Project 1: Appointment Website */}
             <div className="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
               <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
-                  <h5 className="text-2xl font-bold text-white">Appointment Website</h5>
-                  <a href="https://github.com/Kittigon/Online-Appointment-Booking-System" target="_blank" rel="noreferrer" className="text-sm bg-blue-700 hover:bg-blue-600 text-white px-3 py-1 rounded-md transition-colors">
-                    GitHub
-                  </a>
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
+                  <h5 className="text-2xl font-bold text-white">Online-Appointment-Booking-System</h5>
+                  {/* ---------- เพิ่มปุ่ม Demo ตรงนี้ ---------- */}
+                  <div className="flex gap-2">
+                    <a href="https://appointment-website-nine.vercel.app" target="_blank" rel="noreferrer" className="text-sm bg-green-600 hover:bg-green-500 text-white px-3 py-1 rounded-md transition-colors flex items-center gap-1">
+                      <span>🌐</span> Demo
+                    </a>
+                    <a href="https://github.com/Kittigon/Online-Appointment-Booking-System" target="_blank" rel="noreferrer" className="text-sm bg-blue-700 hover:bg-blue-600 text-white px-3 py-1 rounded-md transition-colors">
+                      GitHub
+                    </a>
+                  </div>
+                  {/* -------------------------------------- */}
                 </div>
                 <p className="mb-4 text-gray-400">ระบบจัดการนัดหมายออนไลน์สำหรับศูนย์ให้คำปรึกษา มหาวิทยาลัยพะเยา ลดความซับซ้อนของการนัดหมายผ่านแชท</p>
+
                 <img src={ProjectApmImg} alt="Appointment Website" className="w-full h-auto rounded-lg mb-4 object-cover" />
                 <div className="flex flex-wrap gap-2 mt-4">
                   <TechBadge name="Next.js" />
@@ -124,13 +129,24 @@ function App() {
                   <TechBadge name="Supabase" />
                   <TechBadge name="Tailwind" />
                 </div>
+
+                <div className="mb-4 p-3 bg-gray-800/80 border border-gray-600 rounded-lg mt-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-xl">🔐</span>
+                    <span className="text-sm font-semibold text-blue-400">ทดลองใช้งาน (Demo User)</span>
+                  </div>
+                  <div className="text-sm text-gray-300 grid gap-1">
+                    <p>Username: <span className="font-mono bg-gray-700 px-2 py-0.5 rounded text-white">User1@gmail.com</span></p>
+                    <p>Password: <span className="font-mono bg-gray-700 px-2 py-0.5 rounded text-white">User1234</span></p>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Project 2 */}
+            {/* Project 2: Health Life */}
             <div className="bg-gray-900 border border-gray-700 rounded-xl overflow-hidden shadow-xl hover:shadow-blue-500/20 transition-all duration-300">
               <div className="p-6">
-                <div className="flex justify-between items-start mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
                   <h5 className="text-2xl font-bold text-white">Health Life (Prototype)</h5>
                   <a href="https://www.figma.com/proto/OL04Z2QL1H3PWJamAit5e1/HL-App-Project-Prototype" target="_blank" rel="noreferrer" className="text-sm bg-purple-700 hover:bg-purple-600 text-white px-3 py-1 rounded-md transition-colors">
                     Figma
@@ -138,7 +154,7 @@ function App() {
                 </div>
                 <p className="mb-4 text-gray-400">Prototype แอปพลิเคชันสุขภาพสำหรับโครงการ Startup HealthTech X2 ออกแบบ UX/UI ให้ใช้งานง่าย</p>
                 <div className="flex justify-center bg-gray-800 rounded-lg p-4 mb-4">
-                   <img src={ProjectHlImg} alt="Health Life" className="h-64 object-contain rounded-lg" />
+                  <img src={ProjectHlImg} alt="Health Life" className="h-64 object-contain rounded-lg" />
                 </div>
                 <div className="flex flex-wrap gap-2 mt-4">
                   <TechBadge name="Figma" color="bg-purple-900 text-purple-100 border-purple-700" />
@@ -156,7 +172,7 @@ function App() {
         <div className="py-8 px-4 mx-auto max-w-screen-md text-center">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">ติดต่อผม</h2>
           <p className="mb-8 font-light text-gray-400 sm:text-xl">
-            หากสนใจร่วมงานหรือต้องการสอบถามข้อมูลเพิ่มเติม <br/>สามารถติดต่อได้ตามช่องทางด้านล่างนี้ได้เลยครับ
+            หากสนใจร่วมงานหรือต้องการสอบถามข้อมูลเพิ่มเติม <br />สามารถติดต่อได้ตามช่องทางด้านล่างนี้ได้เลยครับ
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a href="mailto:jearanaikaewko@gmail.com" className="px-8 py-3 border border-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors flex items-center justify-center gap-2">
@@ -180,7 +196,7 @@ function App() {
   );
 }
 
-// Components ย่อย
+// Components
 function SkillCard({ icon, name }) {
   return (
     <div className="bg-gray-800 rounded-xl border border-gray-700 p-6 hover:border-blue-500 transition-all hover:transform hover:-translate-y-1 shadow-md flex flex-col items-center">
