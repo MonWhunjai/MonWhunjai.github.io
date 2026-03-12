@@ -5,6 +5,8 @@ import './App.css';
 import ProfileImg from './assets/images/mon01.png';
 import ProjectApmImg from './assets/images/apm01.png';
 import ProjectHlImg from './assets/images/hl01.png';
+// แนะนำให้ Import รูปภาพ Certificate ที่นี่ เช่น
+// import Cert01Img from './assets/images/cert01.jpg';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
               <li><a href="#about" className="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">เกี่ยวกับผม</a></li>
               <li><a href="#skills" className="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">ทักษะ</a></li>
               <li><a href="#projects" className="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">ผลงาน</a></li>
+              <li><a href="#certificates" className="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">ประกาศนียบัตร</a></li>
               <li><a href="#contact" className="block py-2 px-3 text-gray-300 rounded hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-500 md:p-0">ติดต่อ</a></li>
             </ul>
           </div>
@@ -44,6 +47,9 @@ function App() {
             <a href="#projects" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 transition-all">
               ดูผลงานของผม
             </a>
+            <a href="src/assets/images/Grade.pdf" download="Transcript_Jearanai.pdf" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-800 transition-all shadow-sm">
+                ดาวน์โหลดผลการเรียน
+              </a>
             <a href="#contact" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg focus:ring-4 text-white border-gray-700 hover:bg-gray-700 focus:ring-gray-800 transition-all">
               ติดต่อผม
             </a>
@@ -109,7 +115,6 @@ function App() {
               <div className="p-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-3">
                   <h5 className="text-2xl font-bold text-white">Online-Appointment-Booking-System</h5>
-                  {/* ---------- เพิ่มปุ่ม Demo ตรงนี้ ---------- */}
                   <div className="flex gap-2">
                     <a href="https://appointment-website-nine.vercel.app" target="_blank" rel="noreferrer" className="text-sm bg-green-600 hover:bg-green-500 text-white px-3 py-1 rounded-md transition-colors flex items-center gap-1">
                       <span>🌐</span> Demo
@@ -118,7 +123,6 @@ function App() {
                       GitHub
                     </a>
                   </div>
-                  {/* -------------------------------------- */}
                 </div>
                 <p className="mb-4 text-gray-400">ระบบจัดการนัดหมายออนไลน์สำหรับศูนย์ให้คำปรึกษา มหาวิทยาลัยพะเยา ลดความซับซ้อนของการนัดหมายผ่านแชท</p>
 
@@ -167,8 +171,47 @@ function App() {
         </div>
       </section>
 
+      {/* Certificates Section */}
+      <section id="certificates" className="bg-gray-900 py-24">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+          <h2 className="mb-12 text-3xl font-extrabold tracking-tight text-center text-white">ประกาศนียบัตร</h2>
+          <div className="flex flex-col space-y-8 max-w-4xl mx-auto">
+            
+            <CertificateCard 
+              image="src/assets/images/Full Cer.jpg" 
+              title="Fullstack Developer Certificate" 
+              issuer="Softinter Chiangrai Co., Ltd." 
+              date="26 - 27 July 2025" 
+            />
+            
+            <CertificateCard 
+              image="src/assets/images/Frontend Cer.png"
+              title="Frontend Developer Certificate" 
+              issuer="Softinter Chiangrai Co., Ltd." 
+              date="19 - 20 July 2025" 
+            />
+            
+            <CertificateCard 
+              image="src/assets/images/Aiforthai Cer.png"
+              title="Ai For Thai LLMs ทางการแพทย์ Certificate" 
+              issuer="ศูนย์เทคโนโลยีสารสนเทศและคอมพิวเตอร์แห่งชาติ" 
+              date="6 July 2025" 
+            />
+
+            <CertificateCard 
+              image="src/assets/images/Datasci Cer.png"
+              title="Ai For Thai LLMs ทางการแพทย์ Certificate" 
+              issuer="Rajamangala University of Technology Thanyaburi" 
+              date="31 January 2026" 
+            />
+            
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="bg-gray-900 py-24">
+      {/* ปรับสีพื้นหลังเป็น bg-gray-800 เพื่อให้สลับสีกับส่วน Certificates ที่เป็น bg-gray-900 */}
+      <section id="contact" className="bg-gray-800 py-24">
         <div className="py-8 px-4 mx-auto max-w-screen-md text-center">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-white">ติดต่อผม</h2>
           <p className="mb-8 font-light text-gray-400 sm:text-xl">
@@ -211,6 +254,32 @@ function TechBadge({ name, color = "bg-blue-900 text-blue-100 border-blue-700" }
     <span className={`px-3 py-1 text-xs font-medium rounded-full border ${color}`}>
       {name}
     </span>
+  );
+}
+
+function CertificateCard({ image, title, issuer, date, description }) {
+  return (
+    <div className="bg-gray-800 border border-gray-700 rounded-xl overflow-hidden shadow-xl hover:shadow-blue-500/20 transition-all duration-300 flex flex-col md:flex-row">
+      <div className="w-full md:w-1/2 bg-white flex justify-center items-center p-6 border-b md:border-b-0 md:border-r border-gray-700">
+        <img 
+          src={image} 
+          alt={title} 
+          className="w-full h-auto max-h-80 object-contain drop-shadow-md" 
+        />
+      </div>
+      <div className="p-6 flex-grow flex flex-col justify-between w-full md:w-1/2">
+        <div>
+          <h3 className="text-2xl font-bold text-white mb-2">{title}</h3>
+          <p className="text-gray-400 text-sm mb-4">สถาบัน: {issuer}</p>
+          {description && (
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">{description}</p>
+          )}
+        </div>
+        <div className="flex justify-end mt-4 pt-4 border-t border-gray-700">
+          <p className="text-blue-400 text-sm font-medium">วันที่ได้รับ: {date}</p>
+        </div>
+      </div>
+    </div>
   );
 }
 
