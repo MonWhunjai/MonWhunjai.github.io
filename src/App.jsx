@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import GradePdf from './assets/images/Grade.pdf';
 
 // Import รูปภาพ
 import ProfileImg from './assets/images/mon01.png';
@@ -47,7 +48,7 @@ function App() {
             <a href="#projects" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white rounded-lg bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-800 transition-all">
               ดูผลงานของผม
             </a>
-            <a href="src/assets/images/Grade.pdf" download="Transcript_Jearanai.pdf" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-800 transition-all shadow-sm">
+            <a href={GradePdf} download="Transcript_Jearanai.pdf" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center text-white bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 focus:ring-4 focus:ring-gray-800 transition-all shadow-sm">
                 ดาวน์โหลดผลการเรียน
               </a>
             <a href="#contact" className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border rounded-lg focus:ring-4 text-white border-gray-700 hover:bg-gray-700 focus:ring-gray-800 transition-all">
